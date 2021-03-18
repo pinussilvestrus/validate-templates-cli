@@ -72,7 +72,7 @@ function run() {
 
   const templates = readFile(file);
 
-  console.log(`Validating ${templates.length} templates...`);
+  console.log(`Validating ${templates.length} template(s)...`);
 
   const {
     valid,
