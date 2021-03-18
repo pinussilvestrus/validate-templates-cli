@@ -1,0 +1,40 @@
+{
+  "name": "validate-templates-cli",
+  "version": "0.0.0",
+  "description": "Command Line Tool to validate Camunda Element Templates",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint",
+    "test": "run-s lint",
+    "all": "run-s test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinussilvestrus/validate-templates-cli.git"
+  },
+  "keywords": [
+    "json-schema",
+    "element-templates",
+    "camunda",
+    "cli"
+  ],
+  "author": "Niklas Kiefer <niklas.kiefer@camunda.com (https://github.com/pinussilvestrus)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinussilvestrus/validate-templates-cli/issues"
+  },
+  "bin": {
+    "validate-templates": "./bin/validate-templates.js"
+  },
+  "homepage": "https://github.com/pinussilvestrus/validate-templates-cli#readme",
+  "dependencies": {
+    "@bpmn-io/json-schema-validator": "^0.1.0",
+    "@camunda/element-templates-json-schema": "^0.2.0",
+    "eslint": "^7.22.0",
+    "eslint-plugin-bpmn-io": "^0.12.0",
+    "mri": "^1.1.6"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
