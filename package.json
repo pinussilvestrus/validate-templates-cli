@@ -4,8 +4,9 @@
   "description": "Command Line Tool to validate Camunda Element Templates",
   "scripts": {
     "lint": "eslint",
-    "test": "run-s lint",
-    "all": "run-s test"
+    "test": "mocha",
+    "all": "run-s lint test",
+    "dev": "mocha --watch"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,8 @@
     "mri": "^1.1.6"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
     "npm-run-all": "^4.1.5"
   }
 }
