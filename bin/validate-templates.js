@@ -11,9 +11,8 @@ const Validator = require('@bpmn-io/json-schema-validator').Validator;
 const HELP_INFO = `
 Usage
     $ validate-templates samples.json
-  Examples
-    $ validate-templates ./resources/errors.json
-`;
+Examples
+    $ validate-templates ./resources/errors.json`;
 
 
 function validate(templates) {
@@ -42,11 +41,9 @@ function printErrors(results) {
     console.log();
     console.log(`Invalid Template (name: <${object.name}>, id: <${object.id}>) found.`);
 
-    errors.forEach(function(error) {
-      console.log(' *', error.message);
+    filteredSchemaErrors(errors).forEach(function(error) {
+      console.log('  *', error.message);
     });
-
-    console.log();
   });
 }
 
@@ -72,6 +69,7 @@ function run() {
 
   const templates = readFile(file);
 
+  console.log();
   console.log(`Validating ${templates.length} template(s)...`);
 
   const {
@@ -82,12 +80,34 @@ function run() {
   if (!valid) {
     printErrors(results);
 
-    process.exit(1);
+    process.exit(0);
   }
 
+  console.log();
   console.log('Templates are valid!');
 
 }
 
 
 run();
+
+
+// helpers ///////////////
+
+function filteredSchemaErrors(schemaErrors) {
+  return schemaErrors.filter(function(err) {
+
+    // (1) regular errors are customized from the schema
+    if (err.keyword === 'errorMessage') {
+      return true;
+    }
+
+    // (2) data type errors are relevant, except for
+    // (scope) root level data type errors due to basic schema errors
+    if (err.keyword === 'type' && err.dataPath && err.dataPath !== '/scopes') {
+      return true;
+    }
+
+    return false;
+  });
+}
