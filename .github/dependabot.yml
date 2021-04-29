@@ -1,0 +1,16 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "10:00"
+    timezone: Europe/Amsterdam
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - 7.23.0
+  - dependency-name: "@camunda/element-templates-json-schema"
+    versions:
+    - 0.3.1
