@@ -6,6 +6,10 @@ All notable changes to [validate-templates-cli](https://github.com/pinussilvestr
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.3.0
+
+* `FEAT`: introduce `@bpmn-io/element-templates-validator` as validation library ([#4](https://github.com/pinussilvestrus/validate-templates-cli/issues/4))
+
 ## 0.2.0
 
 * `FEAT`: filter for relevant errors
