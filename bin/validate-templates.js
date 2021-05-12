@@ -4,9 +4,7 @@ const mri = require('mri');
 
 const fs = require('fs');
 
-const schema = require('@camunda/element-templates-json-schema/resources/schema.json');
-
-const Validator = require('@bpmn-io/json-schema-validator').Validator;
+const validateAll = require('@bpmn-io/element-templates-validator').validateAll;
 
 const HELP_INFO = `
 Usage
@@ -14,15 +12,6 @@ Usage
 Examples
     $ validate-templates ./resources/errors.json`;
 
-
-function validate(templates) {
-
-  const validator = new Validator({
-    schema: schema
-  });
-
-  return validator.validateAll(templates);
-}
 
 function printErrors(results) {
 
@@ -75,7 +64,7 @@ function run() {
   const {
     valid,
     results
-  } = validate(templates);
+  } = validateAll(templates);
 
   if (!valid) {
     printErrors(results);
