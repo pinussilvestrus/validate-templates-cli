@@ -4,7 +4,7 @@
 
 Command Line Tool to validate Camunda Element Templates, based on
 
-* [`@bpmn-io/json-schema-validator`](https://github.com/bpmn-io/json-schema-validator) - Validate JSON based on JSON Schema files
+* [`@bpmn-io/element-templates-validator`](https://github.com/bpmn-io/element-templates-validator) - Validate element templates based on JSON Schema
 *  [`@camunda/element-templates-json-schema`](https://github.com/camunda/element-templates-json-schema) - JSON Schema for (Camunda) Element Templates
 
 ## Usage
