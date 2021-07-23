@@ -1,6 +1,6 @@
 {
   "name": "validate-templates-cli",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Command Line Tool to validate Camunda Element Templates",
   "scripts": {
     "lint": "eslint",
